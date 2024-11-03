@@ -15,7 +15,7 @@ import IU.GUI;
 public class App {
 
     public static void main(String[] args) {
-        String broker = "tcp://172.20.10.3:1883";
+        String broker = "tcp://192.168.1.2:1883";
         String clientId = "espClient";
         MemoryPersistence persistence = new MemoryPersistence();
 

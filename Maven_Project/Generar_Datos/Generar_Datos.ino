@@ -1,12 +1,12 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "Iphone de Santiago ";
+const char* ssid = "POCO X6 Pro 5G";
 const char* password = "123456789";
-const char* mqttServer = "172.20.10.3";
+const char* mqttServer = "192.168.2.250";
 const int mqttPort = 1883;
-const char* mqttUser = "smarinbe";
-const char* mqttPassword = "SMBmue53";
+const char* mqttUser = "jpalaciosch";
+const char* mqttPassword = "123456";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -23,7 +23,7 @@ bool HM;
 void setup() {
   // Inicialización de pines, configuraciones, etc.
   // ...
-   Serial.begin(115200);
+   Serial.begin(9600);
    //Serial.begin(9600);
   WiFi.begin(ssid, password);
   Serial.println("...................................");
@@ -41,7 +41,7 @@ while (!client.connected())
            Serial.println("connected");
        else
        {   Serial.print("failed with state ");
-           Serial.print(client.state());
+           Serial.println(client.state());
            delay(2000);
        }
 }
@@ -66,7 +66,7 @@ void loop() {
   temperatura = random(20, 40); // Temperatura en grados Celsius (ejemplo)
   voltaje = random(44.4, 55.4); // Voltaje en voltios (ejemplo)
   porcentajeAceleracion = random(0, 100); // Porcentaje de aceleración (ejemplo)
-  HM = static_cast<bool>(random(0, 2)); // Genera true o false
+  HM = 0;
 
   // Imprimir los datos generados (puedes enviarlos por Bluetooth, mostrar en una pantalla, etc.)
   Serial.print("Velocidad: ");
