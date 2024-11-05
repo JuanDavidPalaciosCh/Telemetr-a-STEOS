@@ -15,8 +15,8 @@ import IU.GUI;
 public class App {
 
     public static void main(String[] args) {
-        String broker = "tcp://192.168.1.2:1883";
-        String clientId = "espClient";
+        String broker = "tcp://192.168.169.87:1883";
+        String clientId = "esp32Client";
         MemoryPersistence persistence = new MemoryPersistence();
 
         String path = System.getProperty("user.dir");
@@ -33,8 +33,8 @@ public class App {
             MqttClient client = new MqttClient(broker, clientId, persistence);
             MqttConnectOptions connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(true);
-            connOpts.setUserName("smarinbe");
-            connOpts.setPassword("SMBmue53".toCharArray());
+            connOpts.setUserName("jpalaciosch");
+            connOpts.setPassword("123456".toCharArray());
 
             System.out.println("Connecting to broker: " + broker);
             client.connect(connOpts);
